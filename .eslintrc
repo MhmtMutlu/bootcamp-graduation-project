@@ -1,4 +1,11 @@
 {
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "extends": [
     "airbnb",
     "airbnb/hooks",
@@ -45,6 +52,16 @@
         "ignoreTemplateLiterals": true,
         "ignoreRegExpLiterals": true
       }
-    ]
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ]
   }
 }
