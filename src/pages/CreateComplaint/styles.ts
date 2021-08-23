@@ -42,6 +42,7 @@ export const SideBar = styled.div`
     justify-content: space-between;
     align-items: center;
     border-radius: 0 0 60px 60px;
+    padding: 2.5rem;
   }
 `;
 
@@ -60,6 +61,7 @@ export const PageContainer = styled.div`
   
   @media (max-width: 972px) {
     background-color: var(--light-color);
+    padding: 1.5rem 2rem;
   }
 `;
 
