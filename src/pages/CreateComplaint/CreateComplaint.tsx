@@ -1,5 +1,17 @@
-import React from 'react';
-import { EditImage, NavbarLink, PageContainer, PageContainerNavbar, PageWrapper, SideBar, Step, StepContainer, StepNumber, StepTitle, Title } from './styles';
+import React from "react";
+import {
+  EditImage,
+  NavbarLink,
+  PageContainer,
+  PageContainerNavbar,
+  PageWrapper,
+  SideBar,
+  Step,
+  StepContainer,
+  StepNumber,
+  StepTitle,
+  Title,
+} from "./styles";
 
 function CreateComplaint() {
   return (
@@ -28,14 +40,11 @@ function CreateComplaint() {
       </SideBar>
       <PageContainer>
         <PageContainerNavbar>
-          <NavbarLink to="/">
-            Ana Sayfa
-          </NavbarLink>
+          <NavbarLink to="/">Ana Sayfa</NavbarLink>
         </PageContainerNavbar>
-        
       </PageContainer>
     </PageWrapper>
-  )
+  );
 }
 
 export default CreateComplaint;
