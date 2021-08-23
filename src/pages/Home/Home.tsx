@@ -8,10 +8,10 @@ function Home() {
       <Header />
       <HomeContainer>
         <ButtonWrapper>
-          <Button>
+          <Button to="/create-complaint">
             Şikayet Oluştur
           </Button>
-          <Button>
+          <Button to="/create-complaint">
             Şikayet Sorgula
           </Button>
         </ButtonWrapper>

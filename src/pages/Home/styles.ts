@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const HomeWrapper = styled.div`
   height: 100vh;
@@ -38,7 +39,8 @@ export const ButtonWrapper = styled.div`
   align-items: center;
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
+  text-decoration: none;
   width: 15rem;
   margin-bottom: 1rem;
   padding: 1rem 2rem;
