@@ -14,6 +14,25 @@ export const InputField = styled.input`
   }
 `;
 
+export const ComplaintView = styled.div`
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+`;
+
+export const ComplaintDetail = styled.p`
+  font-size: 1.2rem;
+  font-weight: semibold;
+  margin: 1rem 0;
+`;
+
+export const Title = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 2rem;
+`;
+
 export const Label = styled.label`
   font-size: 1.5rem;
   font-weight: bold;
