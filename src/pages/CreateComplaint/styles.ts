@@ -54,6 +54,7 @@ export const PageContainer = styled.div`
   padding: 3rem 4rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   @media (max-width: 1520px) {
     font-size: 12px;
