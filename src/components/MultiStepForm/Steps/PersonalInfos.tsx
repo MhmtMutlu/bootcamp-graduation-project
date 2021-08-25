@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { withRouter, useHistory } from "react-router-dom";
-import { useStateMachine } from "little-state-machine";
-import updateAction from "../../../helper/UpdateAction";
-import { FormValues } from "../../../types";
+import { IFormValues } from "../../../types";
 import { ContinueButton, ButtonWrapper, InputField, Label } from "./styles";
+import { ComplaintContext } from "../../../context/ComplaintContext";
 
 function PersonalInfos() {
-  const { register, handleSubmit } = useForm<FormValues>();
-  const { state, actions } = useStateMachine({ updateAction });
+  const { handleSubmit, register } = useForm<IFormValues>();
+  const { formValues, addData } = useContext(ComplaintContext);
   const history = useHistory();
-  const onSubmit = (data: FormValues) => {
-    actions.updateAction(data);
+  const onSubmit = (data: IFormValues) => {
+    addData(data);
     history.push("/complaint-detail");
   };
 
@@ -22,28 +21,28 @@ function PersonalInfos() {
         type="string"
         placeholder="Adınızı giriniz..."
         {...register("firstName")}
-        defaultValue={state.yourDetails.firstName}
+        defaultValue={formValues.firstName}
       />
       <Label>Soyadınız</Label>
       <InputField
         type="string"
         placeholder="Soyadınızı giriniz..."
         {...register("lastName")}
-        defaultValue={state.yourDetails.lastName}
+        defaultValue={formValues.lastName}
       />
       <Label>TC Kimlik Numaranız</Label>
       <InputField
         type="string"
         placeholder="TC Kimlik Numaranızı giriniz..."
         {...register("identityNumber")}
-        defaultValue={state.yourDetails.identityNumber}
+        defaultValue={formValues.identityNumber}
       />
       <Label>Yaşınız</Label>
       <InputField
         type="number"
         placeholder="Yaşınızı giriniz..."
         {...register("age")}
-        defaultValue={state.yourDetails.age}
+        defaultValue={formValues.age}
       />
       <ButtonWrapper>
         <ContinueButton type="submit">Devam Et</ContinueButton>
