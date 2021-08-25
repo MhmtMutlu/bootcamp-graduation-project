@@ -4,21 +4,24 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import ComplaintContextProvider from './context/ComplaintContext';
 import CreateComplaint from './pages/CreateComplaint/CreateComplaint';
 import Home from './pages/Home/Home';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/create-complaint">
-          <CreateComplaint />
-        </Route>
-      </Switch>
-    </Router>
+    <ComplaintContextProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/create-complaint">
+            <CreateComplaint />
+          </Route>
+        </Switch>
+      </Router>
+    </ComplaintContextProvider>
   );
 }
 
