@@ -1,30 +1,38 @@
 import React from 'react';
-import { IDefaultData, IStep } from '../../types';
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { StateMachineProvider, createStore } from "little-state-machine";
+import PersonalInfos from './Steps/PersonalInfos';
+import ComplaintDetail from './Steps/ComplaintDetail';
+import ComplaintTitle from './Steps/ComplaintTitle';
+import AdditionalInfos from './Steps/AdditionalInfos';
+import Result from './Steps/Result';
 
-const steps:IStep[] = [
-  { id: "personalInfos" },
-  { id: "complaintDetail" },
-  { id: "complaintTitle" },
-  { id: "additionalInfos" }
-];
-
-const defaultData:IDefaultData = {
-  firstName: "",
-  lastName: "",
-  identityNumber: "",
-  age: 0,
-  complaintDetail: "",
-  complaintTitle: "",
-  address: "",
-  email: "",
-  documents: ""
-}
+createStore({
+  yourDetails: {
+    firstName: "",
+    lastName: "",
+    identityNumber: "",
+    age: 0,
+    complaintDetail: "",
+    complaintTitle: "",
+    address: "",
+    email: "",
+    documents: ""
+  }
+});
 
 function MultiStepForm() {
   return (
-    <div>
-      
-    </div>
+    <StateMachineProvider>
+      <Router>
+        <Redirect from="/create-complaint/" to="/personal-infos" />
+        <Route path="/personal-infos" component={PersonalInfos} />
+        <Route path="/complaint-detail" component={ComplaintDetail} />
+        <Route path="/complaint-title" component={ComplaintTitle} />
+        <Route path="/additonal-infos" component={AdditionalInfos} />
+        <Route path="/result" component={Result} />
+      </Router>
+    </StateMachineProvider>
   )
 }
 
