@@ -3,18 +3,12 @@ import { useHistory } from "react-router-dom";
 import MultiStepForm from "../../components/MultiStepForm/MultiStepForm";
 import { ComplaintContext } from "../../context/ComplaintContext";
 import { IFormValues } from "../../types";
+import SideBar from "../../components/SideBar/SideBar";
 import {
-  EditImage,
   NavbarButton,
   PageContainer,
   PageContainerNavbar,
   PageWrapper,
-  SideBar,
-  Step,
-  StepContainer,
-  StepNumber,
-  StepTitle,
-  Title,
 } from "./styles";
 
 const initialValue: IFormValues = {
@@ -39,28 +33,7 @@ function CreateComplaint() {
 
   return (
     <PageWrapper>
-      <SideBar>
-        <Title>Şikayet Oluştur</Title>
-        <EditImage> </EditImage>
-        <StepContainer>
-          <Step>
-            <StepNumber>1</StepNumber>
-            <StepTitle>Kişisel Bilgiler</StepTitle>
-          </Step>
-          <Step>
-            <StepNumber>2</StepNumber>
-            <StepTitle>Şikayet Detayı</StepTitle>
-          </Step>
-          <Step>
-            <StepNumber>3</StepNumber>
-            <StepTitle>Şikayet Başlığı</StepTitle>
-          </Step>
-          <Step>
-            <StepNumber>4</StepNumber>
-            <StepTitle>Ek Bilgiler</StepTitle>
-          </Step>
-        </StepContainer>
-      </SideBar>
+      <SideBar />
       <PageContainer>
         <PageContainerNavbar>
           <NavbarButton onClick={homePageButton}>Ana Sayfa</NavbarButton>
