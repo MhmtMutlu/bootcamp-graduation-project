@@ -1,8 +1,9 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import MultiStepForm from "../../components/MultiStepForm/MultiStepForm";
 import {
   EditImage,
-  NavbarLink,
+  NavbarButton,
   PageContainer,
   PageContainerNavbar,
   PageWrapper,
@@ -15,6 +16,11 @@ import {
 } from "./styles";
 
 function CreateComplaint() {
+  const history = useHistory();
+  const homePageButton = () => {
+    history.push("/")
+  }
+
   return (
     <PageWrapper>
       <SideBar>
@@ -41,7 +47,7 @@ function CreateComplaint() {
       </SideBar>
       <PageContainer>
         <PageContainerNavbar>
-          <NavbarLink to="/">Ana Sayfa</NavbarLink>
+          <NavbarButton onClick={homePageButton}>Ana Sayfa</NavbarButton>
         </PageContainerNavbar>
         <MultiStepForm />
       </PageContainer>

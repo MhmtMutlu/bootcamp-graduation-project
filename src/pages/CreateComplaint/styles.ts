@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const PageWrapper = styled.div`
@@ -77,14 +76,16 @@ export const PageContainerNavbar = styled.div`
   }
 `;
 
-export const NavbarLink = styled(Link)`
-  text-decoration: none;
+export const NavbarButton = styled.button`
+  border: none;
+  background-color: inherit;
   font-size: 2rem;
   font-weight: semibold;
   color: inherit;
   transition: all .4s;
 
   &:hover {
+    cursor: pointer;
     color: var(--green-hover-color);
   }
 `;
