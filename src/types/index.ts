@@ -1,19 +1,5 @@
 
-export type GlobalState = {
-  yourDetails: {
-    firstName: string;
-    lastName: string;
-    identityNumber: string;
-    age: number;
-    complaintDetail: string;
-    complaintTitle: string;
-    address: string;
-    email: string;
-    documents: string;
-  };
-};
-
-export type FormValues = {
+export interface IFormValues {
   firstName: string;
   lastName: string;
   identityNumber: string;
@@ -24,3 +10,9 @@ export type FormValues = {
   email: string;
   documents: string;
 };
+
+export interface IComplaintContext {
+  formValues: IFormValues;
+  addData: (i: IFormValues) => void;
+};
+
