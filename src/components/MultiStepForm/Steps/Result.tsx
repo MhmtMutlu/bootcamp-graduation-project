@@ -3,7 +3,9 @@ import { ComplaintDetail, ComplaintView, Title } from "./styles";
 import { ComplaintContext } from "../../../context/ComplaintContext";
 
 function Result() {
-  const { formValues } = useContext(ComplaintContext);
+  const { formValues, changeStep } = useContext(ComplaintContext);
+
+  changeStep("");
 
   return (
     <ComplaintView>

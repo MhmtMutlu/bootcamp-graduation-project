@@ -7,8 +7,11 @@ import { ComplaintContext } from "../../../context/ComplaintContext";
 
 function PersonalInfos() {
   const { handleSubmit, register } = useForm<IFormValues>();
-  const { formValues, addData } = useContext(ComplaintContext);
+  const { formValues, addData, changeStep } = useContext(ComplaintContext);
   const history = useHistory();
+
+  changeStep("firstStep");
+
   const onSubmit = (data: IFormValues) => {
     addData(data);
     history.push("/complaint-detail");
