@@ -1,4 +1,5 @@
 import React from "react";
+import MultiStepForm from "../../components/MultiStepForm/MultiStepForm";
 import {
   EditImage,
   NavbarLink,
@@ -18,7 +19,7 @@ function CreateComplaint() {
     <PageWrapper>
       <SideBar>
         <Title>Şikayet Oluştur</Title>
-        <EditImage />
+        <EditImage> </EditImage>
         <StepContainer>
           <Step>
             <StepNumber>1</StepNumber>
@@ -42,6 +43,7 @@ function CreateComplaint() {
         <PageContainerNavbar>
           <NavbarLink to="/">Ana Sayfa</NavbarLink>
         </PageContainerNavbar>
+        <MultiStepForm />
       </PageContainer>
     </PageWrapper>
   );
