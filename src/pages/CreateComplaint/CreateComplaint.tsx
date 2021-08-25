@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import MultiStepForm from "../../components/MultiStepForm/MultiStepForm";
+import { ComplaintContext } from "../../context/ComplaintContext";
+import { IFormValues } from "../../types";
 import {
   EditImage,
   NavbarButton,
@@ -15,11 +17,25 @@ import {
   Title,
 } from "./styles";
 
+const initialValue: IFormValues = {
+  firstName: "",
+  lastName: "",
+  identityNumber: "",
+  age: 0,
+  complaintDetail: "",
+  complaintTitle: "",
+  address: "",
+  email: "",
+  documents: "",
+};
+
 function CreateComplaint() {
   const history = useHistory();
+  const { addData } = useContext(ComplaintContext);
   const homePageButton = () => {
-    history.push("/")
-  }
+    history.push("/");
+    addData(initialValue);
+  };
 
   return (
     <PageWrapper>
