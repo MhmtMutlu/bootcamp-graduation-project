@@ -4,7 +4,7 @@ import InitialState from "./Initial";
 
 export const ComplaintContext = createContext(InitialState);
 
-const initialValues:IFormValues = {
+const initialValues: IFormValues = {
   firstName: "",
   lastName: "",
   identityNumber: "",
@@ -18,13 +18,18 @@ const initialValues:IFormValues = {
 
 const ComplaintContextProvider: React.FC = ({ children }) => {
   const [formValues, setFormValues] = useState<IFormValues>(initialValues);
+  const [step, setStep] = useState<string>("firstStep");
 
   const addData = (data: any) => {
     setFormValues({ ...formValues, ...data });
   };
 
+  const changeStep = (newStep: string) => {
+    setStep(newStep);
+  };
+
   return (
-    <ComplaintContext.Provider value={{ formValues, addData }}>
+    <ComplaintContext.Provider value={{ formValues, addData, step, changeStep }}>
       {children}
     </ComplaintContext.Provider>
   );

@@ -12,7 +12,9 @@ const InitialState:IComplaintContext = {
     email: "",
     documents: ""
   },
-  addData: () => {}
+  step: "",
+  addData: () => {},
+  changeStep: () => {}
 };
 
 export default InitialState;

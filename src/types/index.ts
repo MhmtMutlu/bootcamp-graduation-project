@@ -13,6 +13,8 @@ export interface IFormValues {
 
 export interface IComplaintContext {
   formValues: IFormValues;
+  step: string;
   addData: (i: IFormValues) => void;
+  changeStep: (i: string) => void;
 };
 
