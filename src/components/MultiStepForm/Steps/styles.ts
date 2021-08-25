@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const InputField = styled.input`
   width: 100%;
-  padding: 1rem;
+  padding: 0.8rem;
   font-size: 1.5rem;
   margin: .5rem 0;
   border-radius: 60px;
@@ -77,4 +77,10 @@ export const BackButton = styled.button`
     cursor: pointer;
     background-color: var(--grey-color);
   }
+`;
+
+export const ErrorMessage = styled.p`
+  color: red;
+  margin: 0 1rem;
+  font-size: .8rem;
 `;
