@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { withRouter, useHistory } from "react-router-dom";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IFormValues } from "../../../types";
 import {
@@ -13,13 +12,14 @@ import {
   ErrorMessage,
 } from "./styles";
 import { ComplaintContext } from "../../../context/ComplaintContext";
-
-const FormSchema = yup.object().shape({
-  complaintTitle: yup.string().min(5, "Şikayetin konusu en az 5 karakter olmalıdır!").required('Şikayet konusunu girmek zorundasınız!')
-});
+import FormSchema from "../../../helper/YupSchemas";
 
 function ComplaintTitle() {
-  const { handleSubmit, register, formState: { errors } } = useForm<IFormValues>({ resolver: yupResolver(FormSchema) });
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<IFormValues>({ resolver: yupResolver(FormSchema) });
   const { formValues, addData, changeStep } = useContext(ComplaintContext);
   const history = useHistory();
 
@@ -38,7 +38,9 @@ function ComplaintTitle() {
         {...register("complaintTitle")}
         defaultValue={formValues.complaintTitle}
       />
-      {errors.complaintTitle && <ErrorMessage>{errors.complaintTitle.message}</ErrorMessage>}
+      {errors.complaintTitle && (
+        <ErrorMessage>{errors.complaintTitle.message}</ErrorMessage>
+      )}
       <ButtonWrapper>
         <BackButton onClick={() => history.goBack()}>Geri Dön</BackButton>
         <ContinueButton type="submit">Devam Et</ContinueButton>
