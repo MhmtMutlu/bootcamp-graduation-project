@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { withRouter, useHistory } from "react-router-dom";
+import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IFormValues } from "../../../types";
 import {
@@ -12,7 +13,17 @@ import {
   ErrorMessage,
 } from "./styles";
 import { ComplaintContext } from "../../../context/ComplaintContext";
-import FormSchema from "../../../helper/YupSchemas";
+
+const FormSchema = yup.object().shape({
+  address: yup
+    .string()
+    .min(10, "Adresiniz en az 10 karakter olmalıdır!")
+    .required("Adresinizi girmek zorundasınız!"),
+  email: yup
+    .string()
+    .email("Doğru bir email adresini girmediniz!")
+    .required("Emailinizi girmek zorundasınız!"),
+});
 
 function AdditionalInfos() {
   const {
@@ -21,12 +32,16 @@ function AdditionalInfos() {
     formState: { errors },
   } = useForm<IFormValues>({ resolver: yupResolver(FormSchema) });
   const { formValues, addData, changeStep } = useContext(ComplaintContext);
+  // const [values, setValues] = useState<IFormValues>(formValues);
   const history = useHistory();
 
   changeStep("fourthStep");
 
   const onSubmit = (data: IFormValues) => {
     addData(data);
+    // setValues({...values, ...data});
+    // console.log(values)
+    // addComplaintToDb(values)
     history.push("/result");
   };
 
@@ -51,7 +66,6 @@ function AdditionalInfos() {
         type="file"
         placeholder="Ek belge giriniz..."
         {...register("documents")}
-        defaultValue={formValues.documents}
       />
       <ButtonWrapper>
         <BackButton onClick={() => history.goBack()}>Geri Dön</BackButton>

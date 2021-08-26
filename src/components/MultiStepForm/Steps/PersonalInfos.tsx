@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { withRouter, useHistory } from "react-router-dom";
+import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IFormValues } from "../../../types";
 import {
@@ -11,7 +12,23 @@ import {
   ErrorMessage,
 } from "./styles";
 import { ComplaintContext } from "../../../context/ComplaintContext";
-import FormSchema from "../../../helper/YupSchemas";
+
+const FormSchema = yup.object().shape({
+  firstName: yup
+    .string()
+    .required("Adınızı girmek zorundasınız!"),
+  lastName: yup
+    .string()
+    .required("Soyadınızı girmek zorundasınız!"),
+  identityNumber: yup
+    .string()
+    .required("TC kimlik numaranızı girmek zorundasınız!"),
+  age: yup
+    .number()
+    .required("Yaşınızı girmek zorundasınız!")
+    .positive("Yaşınız pozitif bir sayı olmalıdır!")
+    .integer()
+});
 
 function PersonalInfos() {
   const {

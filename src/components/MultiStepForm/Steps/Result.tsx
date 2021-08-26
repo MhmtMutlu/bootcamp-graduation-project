@@ -1,9 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ComplaintDetail, ComplaintView, Title } from "./styles";
 import { ComplaintContext } from "../../../context/ComplaintContext";
+import addComplaintToDb from "../../../services/firestore";
 
 function Result() {
   const { formValues, changeStep } = useContext(ComplaintContext);
+
+  useEffect(() => {
+    console.log(formValues)
+    addComplaintToDb(formValues);
+  }, [formValues])
 
   changeStep("");
 

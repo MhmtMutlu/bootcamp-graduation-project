@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { withRouter, useHistory } from "react-router-dom";
+import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IFormValues } from "../../../types";
 import {
@@ -12,7 +13,13 @@ import {
   ErrorMessage,
 } from "./styles";
 import { ComplaintContext } from "../../../context/ComplaintContext";
-import FormSchema from "../../../helper/YupSchemas";
+
+const FormSchema = yup.object().shape({
+  complaintTitle: yup
+    .string()
+    .min(5, "Şikayetin konusu en az 5 karakter olmalıdır!")
+    .required("Şikayet konusunu girmek zorundasınız!"),
+});
 
 function ComplaintTitle() {
   const {
