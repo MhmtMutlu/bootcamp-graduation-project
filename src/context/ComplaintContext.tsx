@@ -13,7 +13,7 @@ const initialValues: IFormValues = {
   complaintTitle: "",
   address: "",
   email: "",
-  documents: "",
+  documents: null,
 };
 
 const ComplaintContextProvider: React.FC = ({ children }) => {

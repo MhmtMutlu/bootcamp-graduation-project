@@ -8,7 +8,7 @@ export interface IFormValues {
   complaintTitle: string;
   address: string;
   email: string;
-  documents: string;
+  documents: FileList | null;
 };
 
 export interface IComplaintContext {
