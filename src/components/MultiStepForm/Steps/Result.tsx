@@ -1,13 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ComplaintDetail, ComplaintView, Title } from "./styles";
 import { ComplaintContext } from "../../../context/ComplaintContext";
 import addComplaintToDb from "../../../services/firestore";
 
 function Result() {
   const { formValues, changeStep } = useContext(ComplaintContext);
+  const [identity, setIdentity] = useState();
 
   useEffect(() => {
-    addComplaintToDb(formValues);
+    addComplaintToDb(formValues).then(id => {setIdentity(id)});
   }, [formValues])
 
   changeStep("");
@@ -17,6 +18,9 @@ function Result() {
       <Title>
         Sayın {formValues.firstName} {formValues.lastName} şikayetiniz alınmıştır.
       </Title>
+      <ComplaintDetail>
+        <strong>Şikayet Numaranız:</strong> {identity !== 0 && identity}
+      </ComplaintDetail>
       <ComplaintDetail>
         <strong>Email:</strong> {formValues.email}
       </ComplaintDetail>
