@@ -53,6 +53,8 @@ export const Button = styled(Link)`
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
+    text-decoration: none;
+    color: var(--grey-color);
   }
 
   @media (max-width: 428px) {
