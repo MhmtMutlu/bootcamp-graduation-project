@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PageWrapper = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   display: grid; 
   grid-template-columns: 0.5fr 1.5fr; 
   grid-template-rows: 1fr; 
@@ -42,7 +42,7 @@ export const PageContainer = styled.div`
   
   @media (max-width: 972px) {
     background-color: var(--light-color);
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 1rem;
   }
 `;
 

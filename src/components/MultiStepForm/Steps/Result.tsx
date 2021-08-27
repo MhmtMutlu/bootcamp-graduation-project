@@ -5,10 +5,12 @@ import addComplaintToDb from "../../../services/firestore";
 
 function Result() {
   const { formValues, changeStep } = useContext(ComplaintContext);
-  const [identity, setIdentity] = useState();
+  const [identity, setIdentity] = useState<string>();
 
   useEffect(() => {
-    addComplaintToDb(formValues).then(id => {setIdentity(id)});
+    addComplaintToDb(formValues).then(id => {
+      setIdentity(id);
+    });
   }, [formValues])
 
   changeStep("");
@@ -19,7 +21,7 @@ function Result() {
         Sayın {formValues.firstName} {formValues.lastName} şikayetiniz alınmıştır.
       </Title>
       <ComplaintDetail>
-        <strong>Şikayet Numaranız:</strong> {identity !== 0 && identity}
+        <strong>Şikayet Numaranız:</strong> {identity !== "" && identity}
       </ComplaintDetail>
       <ComplaintDetail>
         <strong>Email:</strong> {formValues.email}
