@@ -16,7 +16,6 @@ const addComplaintToDb = async (data:IFormValues) => {
     complaintTitle: data.complaintTitle,
     address: data.address,
     email: data.email,
-    documents: data.documents,
     createdDate: firebase.firestore.Timestamp.now(),
   })
   .then(form => {

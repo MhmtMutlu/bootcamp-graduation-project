@@ -7,7 +7,6 @@ function Result() {
   const { formValues, changeStep } = useContext(ComplaintContext);
 
   useEffect(() => {
-    console.log(formValues)
     addComplaintToDb(formValues);
   }, [formValues])
 

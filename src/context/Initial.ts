@@ -9,8 +9,7 @@ const InitialState:IComplaintContext = {
     complaintDetail: "",
     complaintTitle: "",
     address: "",
-    email: "",
-    documents: null
+    email: ""
   },
   step: "",
   addData: () => {},

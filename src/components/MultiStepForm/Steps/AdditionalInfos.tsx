@@ -32,16 +32,12 @@ function AdditionalInfos() {
     formState: { errors },
   } = useForm<IFormValues>({ resolver: yupResolver(FormSchema) });
   const { formValues, addData, changeStep } = useContext(ComplaintContext);
-  // const [values, setValues] = useState<IFormValues>(formValues);
   const history = useHistory();
 
   changeStep("fourthStep");
 
   const onSubmit = (data: IFormValues) => {
     addData(data);
-    // setValues({...values, ...data});
-    // console.log(values)
-    // addComplaintToDb(values)
     history.push("/result");
   };
 
@@ -61,12 +57,6 @@ function AdditionalInfos() {
         defaultValue={formValues.email}
       />
       {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
-      <Label>Resim</Label>
-      <InputField
-        type="file"
-        placeholder="Ek belge giriniz..."
-        {...register("documents")}
-      />
       <ButtonWrapper>
         <BackButton onClick={() => history.goBack()}>Geri Dön</BackButton>
         <ContinueButton type="submit">Devam Et</ContinueButton>

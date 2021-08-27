@@ -19,8 +19,7 @@ const initialValue: IFormValues = {
   complaintDetail: "",
   complaintTitle: "",
   address: "",
-  email: "",
-  documents: null,
+  email: ""
 };
 
 function CreateComplaint() {
