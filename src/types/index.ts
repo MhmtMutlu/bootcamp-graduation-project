@@ -10,6 +10,11 @@ export interface IFormValues {
   email: string;
 };
 
+export interface ILoginValues {
+  email: string;
+  password: string;
+};
+
 export interface IComplaintContext {
   formValues: IFormValues;
   step: string;
