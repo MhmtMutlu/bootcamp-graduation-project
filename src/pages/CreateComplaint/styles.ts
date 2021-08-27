@@ -31,7 +31,7 @@ export const PageContainer = styled.div`
   background-color: var(--light-color);
   border-radius: 60px 0 0 60px;
   color: var(--dark-color);
-  padding: 2rem 4rem;
+  padding: 1rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
