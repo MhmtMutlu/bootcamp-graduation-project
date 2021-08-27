@@ -1,5 +1,5 @@
 import firebase from './firebase';
-import { IFormValues } from '../types/index';
+import { IFormValues, ILoginValues } from '../types/index';
 
 const database = firebase.firestore();
 
@@ -23,6 +23,21 @@ const addComplaintToDb = async (data:IFormValues) => {
   });
 
   return ID;
+};
+
+export const authAdmin = async (data:ILoginValues) => {
+  let user;
+  const { email, password } = data;
+  await firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential:any) => {
+    user = userCredential.user;
+    localStorage.setItem("user", JSON.stringify(user));
+  })
+  .catch(() => {
+    alert("Email veya şifre hatalı!");
+  });
+
+  return user;
 }
 
 export default addComplaintToDb;
