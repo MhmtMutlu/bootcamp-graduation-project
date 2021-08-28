@@ -1,6 +1,6 @@
-import { IComplaintContext } from "../types";
+import { IComplaintContext, ILoginContext } from "../types";
 
-const InitialState:IComplaintContext = {
+export const InitialComplaintState:IComplaintContext = {
   formValues: {
     firstName: "",
     lastName: "",
@@ -16,4 +16,8 @@ const InitialState:IComplaintContext = {
   changeStep: () => {}
 };
 
-export default InitialState;
+export const InitialLoginState:ILoginContext = {
+  isLoggedIn: "",
+  checkIsLogin: () => !!{},
+  logOutAdmin: () => {}
+};

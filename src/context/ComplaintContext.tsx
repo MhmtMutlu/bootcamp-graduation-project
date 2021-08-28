@@ -1,8 +1,8 @@
 import React, { createContext, useState } from "react";
 import { IFormValues } from "../types";
-import InitialState from "./Initial";
+import { InitialComplaintState } from "./Initial";
 
-export const ComplaintContext = createContext(InitialState);
+export const ComplaintContext = createContext(InitialComplaintState);
 
 const initialValues: IFormValues = {
   firstName: "",

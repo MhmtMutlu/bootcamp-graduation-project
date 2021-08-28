@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -8,13 +8,12 @@ import { Modal, ModalBody } from "reactstrap";
 import { ILoginValues } from "../../types";
 import { ButtonWrapper, CloseButton, CloseButtonWrapper, ContinueButton, ErrorMessage, Icon, Input, Label } from "./styles";
 import "../../index.css";
-import { authAdmin } from "../../services/firestore";
+import { LoginContext } from "../../context/LoginContext";
 
 const FormSchema = yup.object().shape({
-  email: yup
+  userName: yup
     .string()
-    .email()
-    .required("Email adresinizi girmek zorundasınız!"),
+    .required("Kullanıcı adınızı girmek zorundasınız!"),
   password: yup
     .string()
     .required("Şifrenizi girmek zorundasınız!")
@@ -26,11 +25,15 @@ function LoginModal({ visible, handleModalVisibilty }: any) {
     register,
     formState: { errors },
   } = useForm<ILoginValues>({ resolver: yupResolver(FormSchema) });
+  const { checkIsLogin } = useContext(LoginContext);
   const history = useHistory();
 
   const onSubmit = (data: ILoginValues) => {
-    authAdmin(data)
-    history.push("/admin/complaint-list");
+    if (checkIsLogin(data)) {
+      history.push("/admin/complaint-list");
+    } else {
+      alert("Kullanıcı adı veya şifre hatalı!");
+    }
   };
 
   return (
@@ -43,14 +46,14 @@ function LoginModal({ visible, handleModalVisibilty }: any) {
             </CloseButton>
           </CloseButtonWrapper>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Label>Email</Label>
+            <Label>Kulanıcı Adı</Label>
             <Input
               type="text"
-              placeholder="kodluyoruz@patika.dev"
-              {...register("email")}
+              placeholder="kodluyoruz"
+              {...register("userName")}
             />
-            {errors.email && (
-              <ErrorMessage>{errors.email.message}</ErrorMessage>
+            {errors.userName && (
+              <ErrorMessage>{errors.userName.message}</ErrorMessage>
             )}
             <Label>Şifre</Label>
             <Input
