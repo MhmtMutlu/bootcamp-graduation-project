@@ -1,43 +1,62 @@
-import firebase from './firebase';
-import { IFormValues, ILoginValues } from '../types/index';
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable no-unused-vars */
+import { useCollectionData } from "react-firebase-hooks/firestore";
+import firebase from "./firebase";
+import { IFormValues } from "../types/index";
 
 const database = firebase.firestore();
 
 const complaintFormsRef = database.collection("complaint-forms");
 
-const addComplaintToDb = async (data:IFormValues) => {
+export const addComplaintToDb = async (data: IFormValues) => {
   let ID;
-  await complaintFormsRef.add({
-    firstName: data.firstName,
-    lastName: data.lastName,
-    age: data.age,
-    identityNumber: data.identityNumber,
-    complaintDetail: data.complaintDetail,
-    complaintTitle: data.complaintTitle,
-    address: data.address,
-    email: data.email,
-    createdDate: firebase.firestore.Timestamp.now(),
-  })
-  .then(form => {
-    ID = form.id;
-  });
+  await complaintFormsRef
+    .add({
+      firstName: data.firstName,
+      lastName: data.lastName,
+      age: data.age,
+      identityNumber: data.identityNumber,
+      complaintDetail: data.complaintDetail,
+      complaintTitle: data.complaintTitle,
+      address: data.address,
+      email: data.email,
+      createdDate: firebase.firestore.Timestamp.now(),
+    })
+    .then((form) => {
+      ID = form.id;
+    });
 
   return ID;
 };
 
-export const authAdmin = async (data:ILoginValues) => {
-  let user;
-  const { email, password } = data;
-  await firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((userCredential:any) => {
-    user = userCredential.user;
-    localStorage.setItem("user", JSON.stringify(user));
-  })
-  .catch(() => {
-    alert("Email veya şifre hatalı!");
+export const getComplaints = async () => {
+  const complaintsArray: Array<any> = [];
+
+  await complaintFormsRef.get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      complaintsArray.push(doc.data());
+    });
   });
 
-  return user;
-}
+  return complaintsArray;
+};
 
-export default addComplaintToDb;
+export const getData = async (formId: string) => {
+  let formData;
+
+  await complaintFormsRef
+    .doc(formId)
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        formData = doc.data();
+      } else {
+        formData = "";
+      }
+    })
+    .catch((error) => {
+      console.log("Error getting document:", error);
+    });
+    
+  return formData;
+};
