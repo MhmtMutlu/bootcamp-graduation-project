@@ -1,10 +1,13 @@
 import React from 'react';
+import Header from '../../Home/Header/Header';
 
 function ComplaintList() {
+  
+
   return (
-    <div>
-      Şikayetler
-    </div>
+    <>
+      <Header />
+    </>
   )
 }
 
