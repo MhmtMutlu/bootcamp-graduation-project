@@ -33,7 +33,7 @@ export const ComplaintCard = styled.div`
   }
 
   @media (max-width: 428px) {
-    width: 55%;
+    width: 95%;
   }
 `;
 

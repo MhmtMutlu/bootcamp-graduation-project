@@ -34,4 +34,8 @@ export const ComplaintListContainer = styled.div`
   @media (max-width: 428px) {
     width: 280px;
   }
+
+  @media (max-width: 324px) {
+    width: 200px;
+  }
 `;

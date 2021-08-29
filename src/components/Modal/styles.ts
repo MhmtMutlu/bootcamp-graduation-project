@@ -13,6 +13,11 @@ export const Input = styled.input`
   &:focus {
     background-color: var(--light-grey-color);
   }
+
+  @media (max-width: 972px) {
+    padding: .5rem;
+    margin-bottom: .7rem;
+  }
 `;
 
 export const Label = styled.label`
@@ -20,12 +25,21 @@ export const Label = styled.label`
   font-weight: bold;
   margin:  .5rem 1rem;
   display: block;
+
+  @media (max-width: 972px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  @media (max-width: 972px) {
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 export const ContinueButton = styled.button`
@@ -42,6 +56,13 @@ export const ContinueButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: var(--green-hover-color);
+  }
+
+  @media (max-width: 972px) {
+    font-size: 1.1rem;
+    padding: .6rem 2rem;
+    width: 100%;
+    margin: 1rem 0 0 0;
   }
 `;
 
