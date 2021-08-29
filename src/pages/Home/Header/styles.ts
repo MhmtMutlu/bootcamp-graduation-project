@@ -20,6 +20,7 @@ export const HeaderSection = styled.div`
   
   @media (max-width: 428px) {
     height: 8rem;
+    width: 100%;
   }
 `;
 

@@ -49,6 +49,7 @@ export const Button = styled(Link)`
   color: var(--light-color);
   border-radius: 60px;
   transition: all .4s;
+  text-align: center;
 
   &:hover {
     transform: scale(1.1);
@@ -80,7 +81,7 @@ export const HomePageImage = styled.img`
   }
 
   @media (max-width: 428px) {
-    height: 200px;
-    width: 280px;
+    height: 180px;
+    width: 250px;
   }
 `;

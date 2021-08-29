@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ComplaintListWrapper = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   display: grid; 
   grid-template-columns: 1fr; 
   grid-template-rows: 0.6fr; 

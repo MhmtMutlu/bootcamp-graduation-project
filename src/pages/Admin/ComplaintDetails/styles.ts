@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ComplaintDetailsWrapper = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   display: grid;
   grid-template-columns: 0.5fr 1.5fr;
   grid-template-rows: 1fr;

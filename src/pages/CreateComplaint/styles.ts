@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PageWrapper = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   display: grid; 
   grid-template-columns: 0.5fr 1.5fr; 
   grid-template-rows: 1fr; 
@@ -35,6 +35,7 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 
   @media (max-width: 1520px) {
     font-size: 12px;
