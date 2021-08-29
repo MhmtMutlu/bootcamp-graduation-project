@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ComplaintDetail } from "../components/Complaints/styles";
 import { LoginContext } from "../context/LoginContext";
 import ComplaintList from "../pages/Admin/ComplaintList/ComplaintList";
 import CreateComplaint from "../pages/CreateComplaint/CreateComplaint";
@@ -12,16 +13,17 @@ function Routes() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/create-complaint">
-          <CreateComplaint />
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/create-complaint" component={CreateComplaint} />
         <PrivateRoute
           path="/admin/complaint-list"
           isAuthenticated={!!isLoggedIn}
           component={ComplaintList}
+        />
+        <PrivateRoute
+          path="/admin/complaint-details/:id"
+          isAuthenticated={!!isLoggedIn}
+          component={ComplaintDetail}
         />
       </Switch>
     </Router>

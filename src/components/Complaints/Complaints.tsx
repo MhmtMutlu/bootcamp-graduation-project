@@ -16,8 +16,8 @@ function Complaints({ firstName, lastName, complaintTitle, complaintDetail, id, 
       <ComplaintDetail>{complaintDetail}</ComplaintDetail>
       {
         adminResponse !== "" 
-        ? <DetailButton to="/">Detay</DetailButton>
-        : <ResponseButton to="/">Cevapla</ResponseButton>
+        ? <DetailButton to={`/admin/complaint-details/${id}`}>Detay</DetailButton>
+        : <ResponseButton to={`/admin/complaint-details/${id}`}>Cevapla</ResponseButton>
       }
     </ComplaintCard>
   )
