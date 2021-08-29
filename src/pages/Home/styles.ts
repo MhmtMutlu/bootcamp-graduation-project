@@ -70,13 +70,9 @@ export const ImageWrapper = styled.div`
   align-items: center;
 `;
 
-export const HomePageImage = styled.div`
+export const HomePageImage = styled.img`
   height: 500px;
   width: 700px;
-  background: url(assets/homepageimage.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 
   @media (max-width: 1124px) {
     height: 300px;
