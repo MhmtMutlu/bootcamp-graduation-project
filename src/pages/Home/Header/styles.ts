@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderSection = styled.div`
@@ -22,10 +23,18 @@ export const HeaderSection = styled.div`
   }
 `;
 
-export const BrandName = styled.h3`
+export const BrandName = styled(Link)`
+  text-decoration: none;
   font-size: 2.5rem;
   color: var(--light-color);
   margin-left: 10rem;
+  transition: all .4s;
+
+  &:hover {
+    transform: scale(1.2);
+    color: var(--grey-color);
+    text-decoration: none;
+  }
 
   @media (max-width: 768px) {
     margin-left: 0;

@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <HeaderSection>
-      <BrandName>Şikayetim Var</BrandName>
+      <BrandName to="/">Şikayetim Var</BrandName>
       {isLoggedIn 
         ? <LoginButton onClick={logOutAdmin}>Çıkış Yap</LoginButton>
         : <LoginButton onClick={handleModalVisibilty}>Giriş Yap</LoginButton>
