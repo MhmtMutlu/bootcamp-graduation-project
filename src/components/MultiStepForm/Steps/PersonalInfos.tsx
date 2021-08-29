@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { withRouter, useHistory } from "react-router-dom";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IFormValues } from "../../../types";
 import {
@@ -12,30 +11,14 @@ import {
   ErrorMessage,
 } from "./styles";
 import { ComplaintContext } from "../../../context/ComplaintContext";
-
-const FormSchema = yup.object().shape({
-  firstName: yup
-    .string()
-    .required("Adınızı girmek zorundasınız!"),
-  lastName: yup
-    .string()
-    .required("Soyadınızı girmek zorundasınız!"),
-  identityNumber: yup
-    .string()
-    .required("TC kimlik numaranızı girmek zorundasınız!"),
-  age: yup
-    .number()
-    .required("Yaşınızı girmek zorundasınız!")
-    .positive("Yaşınız pozitif bir sayı olmalıdır!")
-    .integer()
-});
+import { FirstStep } from "../../../validation/Validations";
 
 function PersonalInfos() {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<IFormValues>({ resolver: yupResolver(FormSchema) });
+  } = useForm<IFormValues>({ resolver: yupResolver(FirstStep) });
   const { formValues, addData, changeStep } = useContext(ComplaintContext);
   const history = useHistory();
 

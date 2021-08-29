@@ -3,28 +3,19 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import * as yup from "yup";
 import { Modal, ModalBody } from "reactstrap";
 import { ILoginValues } from "../../types";
 import { ButtonWrapper, CloseButton, CloseButtonWrapper, ContinueButton, ErrorMessage, Icon, Input, Label } from "./styles";
-import "../../index.css";
 import { LoginContext } from "../../context/LoginContext";
-
-const FormSchema = yup.object().shape({
-  userName: yup
-    .string()
-    .required("Kullanıcı adınızı girmek zorundasınız!"),
-  password: yup
-    .string()
-    .required("Şifrenizi girmek zorundasınız!")
-});
+import { LoginSchema } from "../../validation/Validations";
+import "../../index.css";
 
 function LoginModal({ visible, handleModalVisibilty }: any) {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<ILoginValues>({ resolver: yupResolver(FormSchema) });
+  } = useForm<ILoginValues>({ resolver: yupResolver(LoginSchema) });
   const { checkIsLogin } = useContext(LoginContext);
   const history = useHistory();
 

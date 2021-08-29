@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { withRouter, useHistory } from "react-router-dom";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IFormValues } from "../../../types";
 import {
@@ -13,24 +12,14 @@ import {
   ErrorMessage,
 } from "./styles";
 import { ComplaintContext } from "../../../context/ComplaintContext";
-
-const FormSchema = yup.object().shape({
-  address: yup
-    .string()
-    .min(10, "Adresiniz en az 10 karakter olmalıdır!")
-    .required("Adresinizi girmek zorundasınız!"),
-  email: yup
-    .string()
-    .email("Doğru bir email adresini girmediniz!")
-    .required("Emailinizi girmek zorundasınız!"),
-});
+import { FourthStep } from "../../../validation/Validations";
 
 function AdditionalInfos() {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<IFormValues>({ resolver: yupResolver(FormSchema) });
+  } = useForm<IFormValues>({ resolver: yupResolver(FourthStep) });
   const { formValues, addData, changeStep } = useContext(ComplaintContext);
   const history = useHistory();
 
