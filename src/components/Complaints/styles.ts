@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ComplaintCard = styled.div`
-  width: 25%;
+  width: 30%;
   height: 18rem;
   background-color: var(--dark-color);
   color: var(--light-color);
@@ -42,15 +42,8 @@ export const ComplaintTitle = styled.h4`
   padding: .3rem 0;
 `;
 
-export const ResponsedComplaintId = styled.h4`
+export const ComplaintId = styled.h4`
   font-size: 1.2rem;
-  color: var(--green-color);
-  padding: .3rem 0;
-`;
-
-export const UnesponsedComplaintId = styled.h4`
-  font-size: 1.2rem;
-  color: var(--orange-color);
   padding: .3rem 0;
 `;
 
@@ -64,28 +57,14 @@ export const ComplaintDetail = styled.p`
   color: var(--grey-color);
 `;
 
-export const DetailButton = styled(Link)`
+export const CardButton = styled(Link)`
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: semibold;
-  color: var(--green-color);
   transition: all .4s;
 
   &:hover {
     text-decoration: none;
     color: var(--light-color);
   }
-`;
-
-export const ResponseButton = styled(Link)`
-text-decoration: none;
-font-size: 1.1rem;
-font-weight: semibold;
-color: var(--orange-color);
-transition: all .4s;
-
-&:hover {
-  text-decoration: none;
-  color: var(--light-color);
-}
 `;

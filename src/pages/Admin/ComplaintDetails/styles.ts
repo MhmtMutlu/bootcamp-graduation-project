@@ -1,33 +1,33 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const PageWrapper = styled.div`
+export const ComplaintDetailsWrapper = styled.div`
   min-height: 100vh;
-  display: grid; 
-  grid-template-columns: 0.5fr 1.5fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "SideBarWrapper PageContainer";
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "DetailsSideBarWrapper ComplaintDetailsContainer";
   background-color: var(--dark-color);
 
   @media (max-width: 1124px) {
-    grid-template-columns: 0.6fr 1.4fr; 
+    grid-template-columns: 0.6fr 1.4fr;
   }
 
   @media (max-width: 972px) {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 0.5fr 1.5fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "SideBarWrapper"
-      "PageContainer";
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "DetailsSideBarWrapper"
+      "ComplaintDetailsContainer";
     background-color: var(--light-color);
   }
 `;
 
-export const PageContainer = styled.div`
-  grid-area: PageContainer;
+export const ComplaintDetailsContainer = styled.div`
+  grid-area: ComplaintDetailsContainer;
   background-color: var(--light-color);
   border-radius: 60px 0 0 60px;
   color: var(--dark-color);
@@ -35,6 +35,7 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 
   @media (max-width: 1520px) {
     font-size: 12px;
@@ -46,7 +47,7 @@ export const PageContainer = styled.div`
   }
 `;
 
-export const PageContainerNavbar = styled.div`
+export const ComplaintDetailsContainerNavbar = styled.div`
   position: absolute;
   top: 35px;
   right: 55px;
@@ -68,16 +69,18 @@ export const PageContainerNavbar = styled.div`
   }
 `;
 
-export const NavbarButton = styled.button`
+export const NavbarButton = styled(Link)`
   border: none;
   background-color: inherit;
   font-size: 2rem;
   font-weight: semibold;
   color: inherit;
   transition: all .4s;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
     color: var(--green-hover-color);
+    text-decoration: none;
   }
 `;
