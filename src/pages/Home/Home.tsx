@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { LoginContext } from '../../context/LoginContext';
 import Header from './Header/Header';
-import { Button, ButtonWrapper, HomeContainer, HomePageImage, HomeWrapper, ImageWrapper } from './styles';
+import { Button, ButtonCheck, ButtonWrapper, HomeContainer, HomePageImage, HomeWrapper, ImageWrapper } from './styles';
 
 function Home() {
   const { isLoggedIn } = useContext(LoginContext);
@@ -21,9 +21,9 @@ function Home() {
                 <Button to="/create-complaint">
                   Şikayet Oluştur
                 </Button>
-                <Button to="/create-complaint">
+                <ButtonCheck>
                   Şikayet Sorgula
-                </Button>
+                </ButtonCheck>
               </>
             )
           }

@@ -64,6 +64,30 @@ export const Button = styled(Link)`
   }
 `;
 
+export const ButtonCheck = styled.button`
+  width: 15rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border-radius: 60px;
+  transition: all .4s;
+  text-align: center;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--grey-color);
+  }
+
+  @media (max-width: 428px) {
+    font-size: 1rem;
+    width: 12rem;
+  }
+`;
+
 export const ImageWrapper = styled.div`
   grid-area: ImageWrapper;
   display: flex;
