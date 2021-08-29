@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -30,37 +31,41 @@ export const addComplaintToDb = async (data: IFormValues) => {
   return ID;
 };
 
-export const getComplaints = (callback:Function) => {
+export const getComplaints = (callback: Function) => {
   const complaintsArray: Array<Object> = [];
 
   complaintFormsRef.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       complaintsArray.push({
         ...doc.data(),
-        key: doc.id
+        key: doc.id,
       });
     });
-    callback(complaintsArray)
+    callback(complaintsArray);
   });
 };
 
-export const getData = (formId: string) => {
-  let formData;
+export const getData = (complaintId: string, callback: Function) => {
+  let complaintData;
 
   complaintFormsRef
-    .doc(formId)
+    .doc(complaintId)
     .get()
     .then((doc) => {
       if (doc.exists) {
-        formData = doc.data();
-        console.log(formData)
+        complaintData = doc.data();
       } else {
-        formData = "";
+        complaintData = "";
       }
+      callback(complaintData);
     })
     .catch((error) => {
       console.log("Error getting document:", error);
     });
-    
-  return formData;
+};
+
+export const updateComplaints = (data:any, id:string) => {
+  complaintFormsRef.doc(id).update({
+    adminResponse: data.adminResponse
+  })
 };
