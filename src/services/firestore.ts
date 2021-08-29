@@ -20,6 +20,7 @@ export const addComplaintToDb = async (data: IFormValues) => {
       complaintTitle: data.complaintTitle,
       address: data.address,
       email: data.email,
+      adminResponse: "",
       createdDate: firebase.firestore.Timestamp.now(),
     })
     .then((form) => {
@@ -29,27 +30,30 @@ export const addComplaintToDb = async (data: IFormValues) => {
   return ID;
 };
 
-export const getComplaints = async () => {
-  const complaintsArray: Array<any> = [];
+export const getComplaints = (callback:Function) => {
+  const complaintsArray: Array<Object> = [];
 
-  await complaintFormsRef.get().then((querySnapshot) => {
+  complaintFormsRef.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      complaintsArray.push(doc.data());
+      complaintsArray.push({
+        ...doc.data(),
+        key: doc.id
+      });
     });
+    callback(complaintsArray)
   });
-
-  return complaintsArray;
 };
 
-export const getData = async (formId: string) => {
+export const getData = (formId: string) => {
   let formData;
 
-  await complaintFormsRef
+  complaintFormsRef
     .doc(formId)
     .get()
     .then((doc) => {
       if (doc.exists) {
         formData = doc.data();
+        console.log(formData)
       } else {
         formData = "";
       }
