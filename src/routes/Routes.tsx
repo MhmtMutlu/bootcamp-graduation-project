@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ComplaintDetail } from "../components/Complaints/styles";
 import { LoginContext } from "../context/LoginContext";
+import ComplaintDetails from "../pages/Admin/ComplaintDetails/ComplaintDetails";
 import ComplaintList from "../pages/Admin/ComplaintList/ComplaintList";
 import CreateComplaint from "../pages/CreateComplaint/CreateComplaint";
 import Home from "../pages/Home/Home";
@@ -23,7 +23,7 @@ function Routes() {
         <PrivateRoute
           path="/admin/complaint-details/:id"
           isAuthenticated={!!isLoggedIn}
-          component={ComplaintDetail}
+          component={ComplaintDetails}
         />
       </Switch>
     </Router>
