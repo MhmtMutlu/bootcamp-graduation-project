@@ -9,6 +9,8 @@ export interface IFormValues {
   complaintTitle: string;
   address: string;
   email: string;
+  adminResponse?: string;
+  id?: string;
 }
 
 export interface ILoginValues {
@@ -37,10 +39,22 @@ export interface IPrivateRoute {
 }
 
 export interface IProps {
-  firstName: string;
-  lastName: string;
-  complaintTitle: string;
-  complaintDetail: string;
+  firstName?: string;
+  lastName?: string;
+  complaintTitle?: string;
+  complaintDetail?: string;
   id: string;
+  adminResponse?: string;
+  age?: number;
+  email?: string;
+  address?: string;
+  identityNumber?: string;
+}
+
+export interface IComplaintId {
+  id: string;
+}
+
+export interface IUpdataValue {
   adminResponse: string;
 }
