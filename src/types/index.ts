@@ -35,3 +35,12 @@ export interface IPrivateRoute {
   component: React.ComponentType<any>;
   isAuthenticated: boolean;
 }
+
+export interface IProps {
+  firstName: string;
+  lastName: string;
+  complaintTitle: string;
+  complaintDetail: string;
+  id: string;
+  adminResponse: string;
+}
