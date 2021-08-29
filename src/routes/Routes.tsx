@@ -14,13 +14,15 @@ function Routes() {
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/create-complaint" component={CreateComplaint} />
+        <Route path="/create-complaint" component={CreateComplaint} />
         <PrivateRoute
+          exact
           path="/admin/complaint-list"
           isAuthenticated={!!isLoggedIn}
           component={ComplaintList}
         />
         <PrivateRoute
+          exact
           path="/admin/complaint-details/:id"
           isAuthenticated={!!isLoggedIn}
           component={ComplaintDetails}
