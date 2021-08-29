@@ -38,7 +38,7 @@ function AdditionalInfos() {
 
   const onSubmit = (data: IFormValues) => {
     addData(data);
-    history.push("/result");
+    history.push("/create-complaint/result");
   };
 
   return (

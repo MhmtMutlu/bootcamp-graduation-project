@@ -43,7 +43,7 @@ function PersonalInfos() {
 
   const onSubmit = (data: IFormValues) => {
     addData(data);
-    history.push("/complaint-detail");
+    history.push(`/create-complaint/complaint-detail`);
   };
 
   return (

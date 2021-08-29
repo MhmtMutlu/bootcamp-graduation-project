@@ -34,7 +34,7 @@ function ComplaintDetail() {
 
   const onSubmit = (data: IFormValues) => {
     addData(data);
-    history.push("/complaint-title");
+    history.push("/create-complaint/complaint-title");
   };
 
   return (
