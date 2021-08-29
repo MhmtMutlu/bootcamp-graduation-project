@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const HeaderSection = styled.div`
   grid-area: HeaderSection;
-  width: 100vw;
+  max-width: 100vw;
   height: 10rem;
   background-color: var(--dark-color);
   border-radius: 0 0 60px 60px;
