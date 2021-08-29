@@ -35,13 +35,9 @@ export const Title = styled.h3`
   }
 `;
 
-export const EditImage = styled.div`
+export const EditImage = styled.img`
   height: 70px;
   width: 70px;
-  background: url(assets/editimage.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   margin: 4rem 0;
 
   @media (max-width: 972px) {

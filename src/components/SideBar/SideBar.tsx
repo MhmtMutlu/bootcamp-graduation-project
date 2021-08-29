@@ -17,7 +17,7 @@ function SideBar() {
   return (
     <SideBarWrapper>
       <Title>Şikayet Oluştur</Title>
-      <EditImage> </EditImage>
+      <EditImage src="../../assets/editimage.png" alt="Edit" />
       <StepContainer>
         {step === "firstStep" 
           ? (
