@@ -57,3 +57,11 @@ export const DetailSchema = yup.object().shape({
     .min(5, "Şikayet yanıtı en az 5 karakter olmalıdır!")
     .required("Şikayet yatınızı girmek zorundasınız!"),
 });
+
+export const QuerySchema = yup.object().shape({
+  id: yup
+    .string()
+    .min(20, "Sorgu numaranız en az 20 karakter olmalıdır!")
+    .max(21, "Sorgu numaranız en çok 20 karakter olmalıdır!")
+    .required("Şikayet sorgu numaranızı girmek zorundasınız!")
+})
