@@ -9,6 +9,8 @@ export const FirstStep = yup.object().shape({
     .required("Soyadınızı girmek zorundasınız!"),
   identityNumber: yup
     .string()
+    .min(11, "TC kimlik numarası en az 11 karakter olmalıdır!")
+    .max(12, "TC kimlik numarası en fazla 11 karakter olmalıdır!")
     .required("TC kimlik numaranızı girmek zorundasınız!"),
   age: yup
     .number()
