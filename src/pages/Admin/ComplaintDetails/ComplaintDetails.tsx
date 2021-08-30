@@ -5,7 +5,12 @@ import DetailsSideBar from "../../../components/DetailsSideBar/DetailsSideBar";
 import Loading from "../../../components/Loading/Loading";
 import { getData } from "../../../services/firestore";
 import { IComplaintId, IFormValues } from "../../../types";
-import { ComplaintDetailsContainer, ComplaintDetailsContainerNavbar, ComplaintDetailsWrapper, NavbarButton } from "./styles";
+import {
+  ComplaintDetailsContainer,
+  ComplaintDetailsContainerNavbar,
+  ComplaintDetailsWrapper,
+  NavbarButton,
+} from "./styles";
 
 function ComplaintDetails() {
   const { id }: IComplaintId = useParams();
@@ -24,30 +29,30 @@ function ComplaintDetails() {
     <ComplaintDetailsWrapper>
       {loading && <Loading />}
       {complaintData && (
-        <DetailsSideBar
-          firstName={complaintData.firstName}
-          lastName={complaintData.lastName}
-          age={complaintData.age}
-          identityNumber={complaintData.identityNumber}
-          complaintDetail={complaintData.complaintDetail}
-          complaintTitle={complaintData.complaintTitle}
-          address={complaintData.address}
-          email={complaintData.email}
-          id={id}
-          adminResponse={complaintData.adminResponse}
-        />
-      )}
-      <ComplaintDetailsContainer>
-        <ComplaintDetailsContainerNavbar>
-          <NavbarButton to="/">Ana Sayfa</NavbarButton>
-        </ComplaintDetailsContainerNavbar>
-        {complaintData && (
-          <ComplaintDetail
-            adminResponse={complaintData.adminResponse}
+        <>
+          <DetailsSideBar
+            firstName={complaintData.firstName}
+            lastName={complaintData.lastName}
+            age={complaintData.age}
+            identityNumber={complaintData.identityNumber}
+            complaintDetail={complaintData.complaintDetail}
+            complaintTitle={complaintData.complaintTitle}
+            address={complaintData.address}
+            email={complaintData.email}
             id={id}
+            adminResponse={complaintData.adminResponse}
           />
-        )}
-      </ComplaintDetailsContainer>
+          <ComplaintDetailsContainer>
+            <ComplaintDetailsContainerNavbar>
+              <NavbarButton to="/">Ana Sayfa</NavbarButton>
+            </ComplaintDetailsContainerNavbar>
+            <ComplaintDetail
+              adminResponse={complaintData.adminResponse}
+              id={id}
+            />
+          </ComplaintDetailsContainer>
+        </>
+      )}
     </ComplaintDetailsWrapper>
   );
 }

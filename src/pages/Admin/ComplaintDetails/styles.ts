@@ -9,6 +9,7 @@ export const ComplaintDetailsWrapper = styled.div`
   gap: 0px 0px;
   grid-template-areas: "DetailsSideBarWrapper ComplaintDetailsContainer";
   background-color: var(--dark-color);
+  overflow: hidden;
 
   @media (max-width: 1124px) {
     grid-template-columns: 0.6fr 1.4fr;
