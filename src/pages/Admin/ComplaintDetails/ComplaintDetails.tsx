@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ComplaintDetail from "../../../components/ComplaintDetail/ComplaintDetail";
 import DetailsSideBar from "../../../components/DetailsSideBar/DetailsSideBar";
+import Loading from "../../../components/Loading/Loading";
 import { getData } from "../../../services/firestore";
 import { IComplaintId, IFormValues } from "../../../types";
 import { ComplaintDetailsContainer, ComplaintDetailsContainerNavbar, ComplaintDetailsWrapper, NavbarButton } from "./styles";
@@ -9,13 +10,19 @@ import { ComplaintDetailsContainer, ComplaintDetailsContainerNavbar, ComplaintDe
 function ComplaintDetails() {
   const { id }: IComplaintId = useParams();
   const [complaintData, setComplaintData] = useState<IFormValues>();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     getData(id, setComplaintData);
-  }, [id]);
+    if (complaintData) {
+      setLoading(false);
+    }
+  }, [id, complaintData]);
 
   return (
     <ComplaintDetailsWrapper>
+      {loading && <Loading />}
       {complaintData && (
         <DetailsSideBar
           firstName={complaintData.firstName}

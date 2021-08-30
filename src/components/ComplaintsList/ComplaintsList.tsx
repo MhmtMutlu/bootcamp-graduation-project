@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getComplaints } from '../../services/firestore';
 import Complaints from '../Complaints/Complaints';
+import Loading from '../Loading/Loading';
 import { ComplaintsListWrapper, Title } from './styles';
 
 function ComplaintsList() {
@@ -13,6 +14,7 @@ function ComplaintsList() {
   return (
     <>
       <Title>Şikayetler</Title>
+      {complaintList.length > 0 || <Loading />}
       <ComplaintsListWrapper>
         {
           complaintList && complaintList.map(({
