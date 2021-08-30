@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-export const HomeWrapper = styled.div`
+export const HomeWrapper = styled(motion.div)`
   height: 100vh;
   display: grid; 
   grid-template-columns: 1fr; 
@@ -39,7 +40,7 @@ export const ButtonWrapper = styled.div`
   align-items: center;
 `;
 
-export const Button = styled(Link)`
+export const Button = styled(motion(Link))`
   text-decoration: none;
   width: 15rem;
   margin-bottom: 1rem;
@@ -52,7 +53,6 @@ export const Button = styled(Link)`
   text-align: center;
 
   &:hover {
-    transform: scale(1.1);
     cursor: pointer;
     text-decoration: none;
     color: var(--grey-color);
@@ -64,7 +64,7 @@ export const Button = styled(Link)`
   }
 `;
 
-export const ButtonCheck = styled.button`
+export const ButtonCheck = styled(motion.button)`
   width: 15rem;
   margin-bottom: 1rem;
   padding: 1rem 2rem;

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import ComplaintQueryModal from '../../components/Modal/ComplaintQueryModal';
 import { LoginContext } from '../../context/LoginContext';
+import { homePageItem, homePageItems } from '../../motion/Variants';
 import Header from './Header/Header';
 import { Button, ButtonCheck, ButtonWrapper, HomeContainer, HomePageImage, HomeWrapper, ImageWrapper } from './styles';
 
@@ -13,21 +14,41 @@ function Home() {
   };
 
   return (
-    <HomeWrapper>
+    <HomeWrapper variants={homePageItems} initial="hidden" animate="show">
       <Header />
       <HomeContainer>
         <ButtonWrapper>
           {
             isLoggedIn
             ? (
-              <Button to="/admin/complaint-list">Şikayet Listesi</Button>
+              <Button 
+                to="/admin/complaint-list"
+                layout
+                variants={homePageItem}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                Şikayet Listesi
+              </Button>
             )
             : (
               <>
-                <Button to="/create-complaint">
+                <Button 
+                  to="/create-complaint"
+                  layout
+                  variants={homePageItem}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   Şikayet Oluştur
                 </Button>
-                <ButtonCheck onClick={handleQueryModalVisibilty}>
+                <ButtonCheck 
+                  onClick={handleQueryModalVisibilty}
+                  layout
+                  variants={homePageItem}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   Şikayet Sorgula
                 </ButtonCheck>
               </>
