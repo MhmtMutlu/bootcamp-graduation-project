@@ -13,11 +13,13 @@ function Result() {
     });
   }, [formValues])
 
-  changeStep("");
+  useEffect(() => {
+    changeStep("");
+  }, [changeStep])
 
   return (
     <ComplaintView>
-      <Title>
+      <Title data-testid="title">
         Sayın {formValues.firstName} {formValues.lastName} şikayetiniz alınmıştır.
       </Title>
       <ComplaintDetail>

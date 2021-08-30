@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { withRouter, useHistory } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -23,7 +23,9 @@ function ComplaintTitle() {
   const { formValues, addData, changeStep } = useContext(ComplaintContext);
   const history = useHistory();
 
-  changeStep("thirdStep");
+  useEffect(() => {
+    changeStep("thirdStep");
+  }, [changeStep])
 
   const onSubmit = (data: IFormValues) => {
     addData(data);
