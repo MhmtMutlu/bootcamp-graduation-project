@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const ComplaintCard = styled.div`
   width: 30%;
-  height: 18rem;
+  height: 20rem;
   background-color: var(--dark-color);
   color: var(--light-color);
   margin: 10px;

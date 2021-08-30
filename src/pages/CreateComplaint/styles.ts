@@ -44,6 +44,7 @@ export const PageContainer = styled.div`
   @media (max-width: 972px) {
     background-color: var(--light-color);
     padding: 1.5rem 1rem;
+    max-width: 100vw;
   }
 `;
 

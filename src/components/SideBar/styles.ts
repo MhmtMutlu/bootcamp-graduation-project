@@ -16,6 +16,7 @@ export const SideBarWrapper = styled.div`
     align-items: center;
     border-radius: 0 0 60px 60px;
     padding: 2.5rem;
+    max-width: 100vw;
   }
 `;
 
