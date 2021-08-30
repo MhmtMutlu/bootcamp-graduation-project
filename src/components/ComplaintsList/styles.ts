@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const ComplaintsListWrapper = styled.div`
+export const ComplaintsListWrapper = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

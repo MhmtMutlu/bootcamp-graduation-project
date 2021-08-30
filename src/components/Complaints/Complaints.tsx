@@ -1,4 +1,5 @@
 import React from "react";
+import { card } from "../../motion/Variants";
 import { IProps } from "../../types";
 import {
   ComplaintCard,
@@ -18,7 +19,12 @@ function Complaints({
   adminResponse,
 }: IProps) {
   return (
-    <ComplaintCard>
+    <ComplaintCard
+      layout
+      variants={card}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.9 }}
+    >
       {adminResponse !== "" ? (
         <ComplaintId style={{ color: `var(--green-color)` }}>{id}</ComplaintId>
       ) : (
