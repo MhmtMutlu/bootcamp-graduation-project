@@ -1,10 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import ComplaintQueryModal from '../../components/Modal/ComplaintQueryModal';
 import { LoginContext } from '../../context/LoginContext';
 import Header from './Header/Header';
 import { Button, ButtonCheck, ButtonWrapper, HomeContainer, HomePageImage, HomeWrapper, ImageWrapper } from './styles';
 
 function Home() {
   const { isLoggedIn } = useContext(LoginContext);
+  const [visibleQuery, setVisibleQuery] = useState(false);
+
+  const handleQueryModalVisibilty = () => {
+    setVisibleQuery(!visibleQuery);
+  };
 
   return (
     <HomeWrapper>
@@ -21,7 +27,7 @@ function Home() {
                 <Button to="/create-complaint">
                   Şikayet Oluştur
                 </Button>
-                <ButtonCheck>
+                <ButtonCheck onClick={handleQueryModalVisibilty}>
                   Şikayet Sorgula
                 </ButtonCheck>
               </>
@@ -32,6 +38,7 @@ function Home() {
           <HomePageImage src="../../assets/homepageimage.png" alt="Home Page" />
         </ImageWrapper>
       </HomeContainer>
+      <ComplaintQueryModal visibleQuery={visibleQuery} handleQueryModalVisibilty={handleQueryModalVisibilty} />
     </HomeWrapper>
   )
 }
