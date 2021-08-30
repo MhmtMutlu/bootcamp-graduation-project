@@ -2,8 +2,8 @@ import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import ComplaintContextProvider, { ComplaintContext } from "./ComplaintContext";
 
-describe("login function", () => {
-  test("sets isLoggedIn status to true", () => {
+describe("Complaint context", () => {
+  test("tests for functions in context", () => {
     const TestComponent = () => {
       const { addData, changeStep, step, formValues } = React.useContext(ComplaintContext);
       const newValues = {
