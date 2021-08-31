@@ -29,6 +29,7 @@
 ![Proje Resmi](public/screenshots/screenshot2.png)
 ![Proje Resmi](public/screenshots/screenshot3.png)
 ![Proje Resmi](public/screenshots/screenshot4.png)
+![Proje Resmi](public/screenshots/screenshot5.png)
 
 ## Bitirme projesi
 ### Başvuru / ticket yönetim sistemi
