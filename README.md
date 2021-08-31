@@ -7,14 +7,13 @@
    <li>Şifre: bootcamp109</li>
 </ul>
 
-
 # 🧰 Kullandığım Teknolojiler
 
 <ul style="list-style-type:disc">
    <li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
-   <li><a href="https://firebase.google.com/">Firebase</a></li>
+   <li><a href="https://firebase.google.com/">Firebase (Firestore cloud)</a></li>
    <li><a href="https://reactrouter.com/web/guides/quick-start">React Router</a></li>
-   <li><a href="https://react-hook-form.com/">React Hook Form</a></li>
+   <li><a href="https://react-hook-form.com/">React Hook Form (Wizard Form)</a></li>
    <li><a href="https://github.com/jquense/yup">YupJS</a></li>
    <li><a href="https://reactjs.org/docs/context.html">Context API</a></li>
    <li><a href="https://styled-components.com/docs">Styled Components</a></li>
@@ -43,7 +42,6 @@
 - [x] Open source
 - [x] Eslint
 
-
 # Dikkat edelim
 - [x] Tüm formlarda gerekli validasyonlar olsun.
 - [x] Back-end yazmak zorunda degilsiniz, back-end olarak firebase ya da mock bir api kullanabilirsiniz.
@@ -57,8 +55,6 @@
 - [x] Mobil uyumlulu guzel bir tasarim
 - [x] Kullanilabilir UX
 
-
-# Bitirme projesi
 ## Başvuru / ticket yönetim sistemi
 
 ### Genel Açıklama
