@@ -77,26 +77,26 @@ Kullanıcı adı ve şifre ile girilebilen bir ekrandan da yetkili kullanıcıla
 
 ##### Gereklilikler
 
-- React hooks
-- Router (react-router/ reach router / etc)
-- Context API
-- Form management library (react-hook-form(önerilen) / formik / etc)
-- Validation library (yup(önerilen), joi, etc)
-- Tests (Unit test zorunlu, e2e opsiyonel)
-- Uygulamanız kesinlikle bir servise deploy edilmiş olacak ve public link readme içinde yer alacak (netlify, vercel gibi)
-- Open source
-- Eslint
+- [x] React hooks
+- [x] Router (react-router/ reach router / etc)
+- [x] Context API
+- [x] Form management library (react-hook-form(önerilen) / formik / etc)
+- [x] Validation library (yup(önerilen), joi, etc)
+- [x] Tests (Unit test zorunlu, e2e opsiyonel)
+- [x] Uygulamanız kesinlikle bir servise deploy edilmiş olacak ve public link readme içinde yer alacak (netlify, vercel gibi)
+- [x] Open source
+- [x] Eslint
 
 
 ##### Dikkat edelim
-- Tüm formlarda gerekli validasyonlar olsun.
-- Back-end yazmak zorunda degilsiniz, back-end olarak firebase ya da mock bir api kullanabilirsiniz.
-- Elinizden gelen en iyi şekilde seperation of concerns'e dikkat ederek yazın.
-- Admin paneline u:kodluyoruz, p:bootcamp109 bilgileri ile giriş yapabilmeliyim.
-- Mümkünse admin paneline bir menü ekleyelim (başvuru listesi, çıkıs gibi işlemleri kapsasın)
+- [x] Tüm formlarda gerekli validasyonlar olsun.
+- [x] Back-end yazmak zorunda degilsiniz, back-end olarak firebase ya da mock bir api kullanabilirsiniz.
+- [x] Elinizden gelen en iyi şekilde seperation of concerns'e dikkat ederek yazın.
+- [x] Admin paneline u:kodluyoruz, p:bootcamp109 bilgileri ile giriş yapabilmeliyim.
+- [x] Mümkünse admin paneline bir menü ekleyelim (başvuru listesi, çıkıs gibi işlemleri kapsasın)
 
 ##### Bonus (Zorunlu degil, deneysel ozellikler)
-- Typescript 
-- Service worker ile offline render destegi
-- Mobil uyumlulu guzel bir tasarim
-- Kullanilabilir UX
+- [x] Typescript 
+- [ ] Service worker ile offline render destegi
+- [x] Mobil uyumlulu guzel bir tasarim
+- [x] Kullanilabilir UX
