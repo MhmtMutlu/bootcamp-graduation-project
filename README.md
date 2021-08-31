@@ -31,10 +31,37 @@
 ![Proje Resmi](public/screenshots/screenshot4.png)
 ![Proje Resmi](public/screenshots/screenshot5.png)
 
-## Bitirme projesi
-### Başvuru / ticket yönetim sistemi
+# Gereklilikler
 
-#### Genel Açıklama
+- [x] React hooks
+- [x] Router (react-router/ reach router / etc)
+- [x] Context API
+- [x] Form management library (react-hook-form(önerilen) / formik / etc)
+- [x] Validation library (yup(önerilen), joi, etc)
+- [x] Tests (Unit test zorunlu, e2e opsiyonel)
+- [x] Uygulamanız kesinlikle bir servise deploy edilmiş olacak ve public link readme içinde yer alacak (netlify, vercel gibi)
+- [x] Open source
+- [x] Eslint
+
+
+# Dikkat edelim
+- [x] Tüm formlarda gerekli validasyonlar olsun.
+- [x] Back-end yazmak zorunda degilsiniz, back-end olarak firebase ya da mock bir api kullanabilirsiniz.
+- [x] Elinizden gelen en iyi şekilde seperation of concerns'e dikkat ederek yazın.
+- [x] Admin paneline u:kodluyoruz, p:bootcamp109 bilgileri ile giriş yapabilmeliyim.
+- [x] Mümkünse admin paneline bir menü ekleyelim (başvuru listesi, çıkıs gibi işlemleri kapsasın)
+
+# Bonus (Zorunlu degil, deneysel ozellikler)
+- [x] Typescript 
+- [ ] Service worker ile offline render destegi
+- [x] Mobil uyumlulu guzel bir tasarim
+- [x] Kullanilabilir UX
+
+
+# Bitirme projesi
+## Başvuru / ticket yönetim sistemi
+
+### Genel Açıklama
 
 Uygulamamız herkese açık bir başvuru formunun son kullanıcı tarafından doldurulması ile başlıyor. 
 Formu dolduran kullanıcıya başvurusunu takip edebilecegi bir kod veriliyor. Kullanıcı başvuru durumu sayfasından bu kod ile başvurusunun çözülüp çözülemedigini kontrol edebiliyor. 
@@ -43,7 +70,6 @@ Kullanıcı adı ve şifre ile girilebilen bir ekrandan da yetkili kullanıcıla
 
 
 #### Detaylı Açıklama
-
 
 ##### Routes / Paths
 
@@ -72,31 +98,3 @@ Kullanıcı adı ve şifre ile girilebilen bir ekrandan da yetkili kullanıcıla
 - /admin/basvuru/{basvuruNo}
   - Başvurunun durumu güncellenebilir ve başvuruya cevap yazılabilir.
   - Burada yazılan cevap son kullanıci tarafından basvuru/{basvuruNo} kısmından görüntülenebilmelidir.
-  
-
-
-##### Gereklilikler
-
-- [x] React hooks
-- [x] Router (react-router/ reach router / etc)
-- [x] Context API
-- [x] Form management library (react-hook-form(önerilen) / formik / etc)
-- [x] Validation library (yup(önerilen), joi, etc)
-- [x] Tests (Unit test zorunlu, e2e opsiyonel)
-- [x] Uygulamanız kesinlikle bir servise deploy edilmiş olacak ve public link readme içinde yer alacak (netlify, vercel gibi)
-- [x] Open source
-- [x] Eslint
-
-
-##### Dikkat edelim
-- [x] Tüm formlarda gerekli validasyonlar olsun.
-- [x] Back-end yazmak zorunda degilsiniz, back-end olarak firebase ya da mock bir api kullanabilirsiniz.
-- [x] Elinizden gelen en iyi şekilde seperation of concerns'e dikkat ederek yazın.
-- [x] Admin paneline u:kodluyoruz, p:bootcamp109 bilgileri ile giriş yapabilmeliyim.
-- [x] Mümkünse admin paneline bir menü ekleyelim (başvuru listesi, çıkıs gibi işlemleri kapsasın)
-
-##### Bonus (Zorunlu degil, deneysel ozellikler)
-- [x] Typescript 
-- [ ] Service worker ile offline render destegi
-- [x] Mobil uyumlulu guzel bir tasarim
-- [x] Kullanilabilir UX
