@@ -1,13 +1,13 @@
 import firebase from 'firebase';
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGE_SENDER,
-  appId: process.env.REACT_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID
+  apiKey: "AIzaSyAwNgafpQC6SB-PNk9y_sI0fFvw-C611Ik",
+  authDomain: "complaint-base.firebaseapp.com",
+  projectId: "complaint-base",
+  storageBucket: "complaint-base.appspot.com",
+  messagingSenderId: "6000697279",
+  appId: "1:6000697279:web:2555bc0db58c78c8500b0a",
+  measurementId: "G-FZ2M20HT86"
 };
 
 firebase.initializeApp(firebaseConfig);
