@@ -55,7 +55,7 @@ export const getData = (complaintId: string, callback: Function) => {
       if (doc.exists) {
         complaintData = doc.data();
       } else {
-        complaintData = "";
+        complaintData = null;
       }
       callback(complaintData);
     })

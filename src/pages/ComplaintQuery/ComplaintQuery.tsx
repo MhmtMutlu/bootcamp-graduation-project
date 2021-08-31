@@ -21,7 +21,7 @@ function ComplaintQuery() {
   useEffect(() => {
     setLoading(true);
     getData(id, setComplaintQueryData);
-    if (complaintQueryData) {
+    if (complaintQueryData || complaintQueryData === null) {
       setLoading(false);
     }
   }, [id, complaintQueryData]);
@@ -55,7 +55,7 @@ function ComplaintQuery() {
           </ComplaintQueryContainer>
         </>
       ) : (
-        <NotFound />
+        loading || <NotFound />
       )}
     </ComplaintQueryWrapper>
   );
